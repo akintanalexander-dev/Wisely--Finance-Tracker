@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { Box, Typography, TextField, Button, Alert } from '@mui/material';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import './Auth.css';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -33,29 +35,7 @@ function Login() {
     }
   };
 
-  return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        bgcolor: 'background.default',
-      }}
-    >
-      <Box
-        sx={{
-          bgcolor: 'background.paper',
-          borderRadius: 3,
-          boxShadow: '0 2px 20px rgba(0,0,0,0.08)',
-          p: 5,
-          width: '100%',
-          maxWidth: 400,
-        }}
-      >
-        <Typography variant="h5" fontWeight={700} align="center" sx={{ mb: 3 }}>
-          Log In
-        </Typography>
+  return <Box className="auth-page"><Box className="auth-aside"><Box className="auth-logo"><Box className="auth-mark"><AutoGraphIcon /></Box><Typography>Wisely</Typography></Box><Typography variant="h2">Your money has a story. We help you read it.</Typography><Typography>See the full picture, make thoughtful choices, and feel at home in your finances.</Typography></Box><Box className="auth-main"><Box className="auth-card"><Typography className="auth-kicker">Welcome back</Typography><Typography variant="h4" className="auth-title">Log in to your calm.</Typography><Typography className="auth-subtitle">Pick up right where you left off.</Typography>
 
         {error && (
           <Alert severity="error" sx={{ mb: 2 }}>
@@ -89,9 +69,7 @@ function Login() {
             Sign Up
           </Link>
         </Typography>
-      </Box>
-    </Box>
-  );
+      </Box></Box></Box>;
 }
 
 export default Login;

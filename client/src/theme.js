@@ -20,10 +20,13 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "'Segoe UI', sans-serif",
+    fontFamily: "'DM Sans', 'Segoe UI', sans-serif",
+    h1: { fontFamily: "'Fraunces', Georgia, serif", fontWeight: 700, letterSpacing: '-0.04em' },
+    h2: { fontFamily: "'Fraunces', Georgia, serif", fontWeight: 700, letterSpacing: '-0.03em' },
+    h3: { fontFamily: "'Fraunces', Georgia, serif", fontWeight: 700, letterSpacing: '-0.03em' },
   },
   shape: {
-    borderRadius: 12,
+    borderRadius: 16,
   },
 });
 

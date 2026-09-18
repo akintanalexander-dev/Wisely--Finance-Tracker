@@ -14,6 +14,54 @@ nav a {
   font-weight: 500;
 }
 
+ .landing-page { min-height: 100vh; overflow: hidden; background: #fff9f2; }
+ .landing-nav { background: transparent !important; color: #163d3d !important; }
+ .landing-nav .MuiToolbar-root { max-width: 1200px; width: 100%; margin: auto; padding: 24px 32px; justify-content: space-between; }
+ .brand-lockup { display: flex; align-items: center; gap: 10px; }
+ .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; color: #fff9f2; background: #0f4c4c; transform: rotate(-6deg); }
+ .brand-mark svg { font-size: 20px; transform: rotate(6deg); }
+ .brand-name { font-size: 1.25rem !important; font-weight: 700 !important; letter-spacing: -0.04em; }
+ .nav-actions { display: flex; align-items: center; gap: 10px; }
+ .nav-actions .MuiButton-contained, .hero-actions .MuiButton-contained { background: #0f4c4c; box-shadow: none; border-radius: 10px; padding: 12px 18px; }
+ .landing-hero { position: relative; padding: 76px 0 110px; background: radial-gradient(circle at 85% 18%, #ffd9c8 0, rgba(255,217,200,0) 28%), linear-gradient(135deg, #fff9f2 0%, #f6efe4 100%); }
+ .hero-grid { display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(380px, .9fr); gap: 70px; align-items: center; }
+ .hero-copy { max-width: 650px; }
+ .eyebrow { background: #ffdfd2 !important; color: #a34e39 !important; font-weight: 700 !important; border: 0 !important; margin-bottom: 24px; }
+ .hero-copy h1 { font-size: clamp(3.5rem, 6vw, 5.5rem); line-height: .98; color: #0f4c4c; margin: 0 0 26px; }
+ .hero-copy h1 em { color: #db7257; font-style: normal; }
+ .hero-description { color: #537070; font-size: 1.15rem; line-height: 1.7; max-width: 540px; margin-bottom: 30px !important; }
+ .hero-actions { flex-wrap: wrap; }
+ .quiet-button { color: #0f4c4c !important; }
+ .trust-row { align-items: center; margin-top: 30px; color: #668181; font-size: .8rem; }
+ .trust-row svg { color: #2e9e6c; font-size: 18px; }
+ .hero-visual { min-height: 440px; position: relative; display: grid; place-items: center; }
+ .visual-orbit { position: absolute; border: 1px solid rgba(15,76,76,.13); border-radius: 50%; transform: rotate(-22deg); }
+ .orbit-one { width: 410px; height: 270px; }
+ .orbit-two { width: 500px; height: 350px; transform: rotate(28deg); }
+ .balance-card { position: relative; z-index: 1; width: min(100%, 350px); padding: 30px; border-radius: 24px; color: #fff9f2; background: #0f4c4c; box-shadow: 22px 28px 0 rgba(255,139,94,.28), 0 24px 55px rgba(15,76,76,.2); transform: rotate(5deg); }
+ .card-label { color: #b8d0c9; font-size: .78rem !important; text-transform: uppercase; letter-spacing: .12em; }
+ .balance-amount { font-family: 'Fraunces', Georgia, serif; font-size: 2.7rem !important; margin: 15px 0 !important; }
+ .balance-change { display: flex; gap: 9px; align-items: center; color: #ffc0aa; font-size: .8rem; }
+ .balance-change p:last-child { color: #b8d0c9; }
+ .mini-chart { height: 75px; display: flex; align-items: end; gap: 9px; margin-top: 28px; }
+ .mini-chart span { flex: 1; background: #ff8b5e; border-radius: 4px 4px 0 0; opacity: .85; }
+ .mini-chart span:nth-child(1) { height: 35%; }
+ .mini-chart span:nth-child(2) { height: 55%; }
+ .mini-chart span:nth-child(3) { height: 42%; }
+ .mini-chart span:nth-child(4) { height: 72%; }
+ .mini-chart span:nth-child(5) { height: 58%; }
+ .mini-chart span:nth-child(6) { height: 82%; }
+ .mini-chart span:nth-child(7) { height: 100%; }
+ .floating-note { position: absolute; z-index: 2; right: 0; bottom: 30px; display: flex; gap: 12px; align-items: center; padding: 14px 18px; border: 1px solid #eadfd1; border-radius: 14px; background: rgba(255,255,255,.92); box-shadow: 0 14px 30px rgba(15,76,76,.1); transform: rotate(-3deg); }
+ .floating-note svg { color: #db7257; }
+ .floating-note p { font-size: .75rem; color: #668181; }
+ .floating-note strong { font-size: .9rem; color: #0f4c4c; }
+ .landing-proof { padding: 26px 0; color: #668181; background: #f1e7d9; }
+ .landing-proof .MuiContainer-root { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+ .landing-proof p { font-size: .9rem; }
+ .proof-items { display: flex; gap: 24px; color: #0f4c4c; font-size: .85rem; font-weight: 600; }
+ @media (max-width: 800px) { .landing-nav .MuiToolbar-root { padding: 18px 20px; } .hero-grid { grid-template-columns: 1fr !important; gap: 30px; } .landing-hero { padding: 55px 0 75px; } .hero-copy h1 { font-size: 3.5rem; } .hero-visual { min-height: 360px; } .landing-proof .MuiContainer-root, .proof-items { align-items: flex-start; flex-direction: column; } .orbit-two { width: 400px; } .floating-note { right: 4%; } }
+ @media (max-width: 500px) { .nav-actions .MuiButton-text { display: none; } .hero-copy h1 { font-size: 3rem; } .hero-description { font-size: 1rem; } .trust-row { gap: 7px !important; } .trust-row p:nth-of-type(2) { display: none; } .balance-card { width: 290px; padding: 24px; } .balance-amount { font-size: 2.2rem !important; } .floating-note { right: 0; bottom: 10px; } .landing-proof { padding: 22px 0; } }
 main {
   display: flex;
   flex-direction: column;

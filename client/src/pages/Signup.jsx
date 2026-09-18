@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { Box, Typography, TextField, Button, Alert } from '@mui/material';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import './Auth.css';
 
 function Signup() {
   const [name, setName] = useState('');
@@ -32,29 +34,7 @@ function Signup() {
     }
   };
 
-  return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        bgcolor: 'background.default',
-      }}
-    >
-      <Box
-        sx={{
-          bgcolor: 'background.paper',
-          borderRadius: 3,
-          boxShadow: '0 2px 20px rgba(0,0,0,0.08)',
-          p: 5,
-          width: '100%',
-          maxWidth: 400,
-        }}
-      >
-        <Typography variant="h5" fontWeight={700} align="center" sx={{ mb: 3 }}>
-          Sign Up
-        </Typography>
+  return <Box className="auth-page"><Box className="auth-aside"><Box className="auth-logo"><Box className="auth-mark"><AutoGraphIcon /></Box><Typography>Wisely</Typography></Box><Typography variant="h2">A clearer view is a better place to start.</Typography><Typography>Join a growing community making money feel less mysterious and more manageable.</Typography></Box><Box className="auth-main"><Box className="auth-card"><Typography className="auth-kicker">Start fresh</Typography><Typography variant="h4" className="auth-title">Create your Wisely.</Typography><Typography className="auth-subtitle">A few details, then you’re on your way.</Typography>
 
         {error && (
           <Alert severity="error" sx={{ mb: 2 }}>
@@ -94,9 +74,7 @@ function Signup() {
             Log In
           </Link>
         </Typography>
-      </Box>
-    </Box>
-  );
+      </Box></Box></Box>;
 }
 
 export default Signup;

@@ -5,12 +5,17 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f7f9fc;
-  color: #1a1a1a;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  background-color: #fff9f2;
+  color: #163d3d;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+::selection {
+  background: #ffcfbe;
+  color: #0f4c4c;
 }

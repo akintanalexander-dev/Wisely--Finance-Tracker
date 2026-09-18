@@ -1,8 +1,4 @@
-.dashboard {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 40px 24px;
-}
+.dashboard-date { letter-spacing: .12em; font-weight: 700 !important; }.dashboard-title { color: #0f4c4c; letter-spacing: -.04em !important; }.balance-panel { background: linear-gradient(135deg, #0f4c4c, #176666) !important; border-radius: 20px !important; box-shadow: 0 14px 26px rgba(15,76,76,.14) !important; }.transaction-panel { border: 1px solid #eadfd1; box-shadow: none !important; }.MuiTableContainer-root { border: 1px solid #eadfd1; border-radius: 16px !important; box-shadow: none !important; overflow-x: auto; }.MuiTableHead-root { background: #f1e7d9; }
 
 .dashboard-header {
   display: flex;

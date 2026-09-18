@@ -14,6 +14,7 @@ import DashboardIcon from '@mui/icons-material/SpaceDashboardOutlined';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLongOutlined';
 import PersonIcon from '@mui/icons-material/PersonOutlined';
 import LogoutIcon from '@mui/icons-material/LogoutOutlined';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 
 const drawerWidth = 240;
 const INACTIVITY_LIMIT = 10 * 60 * 1000; // 10 minutes in milliseconds
@@ -76,8 +77,9 @@ function Layout({ children }) {
           },
         }}
       >
-        <Box sx={{ p: 3 }}>
-          <Typography variant="h6" fontWeight={700}>
+          <Box sx={{ p: 3, display: 'flex', alignItems: 'center', gap: 1.2 }}>
+          <Box sx={{ width: 32, height: 32, display: 'grid', placeItems: 'center', borderRadius: '10px', bgcolor: 'secondary.main', color: 'primary.main', transform: 'rotate(-6deg)' }}><AutoGraphIcon sx={{ fontSize: 19, transform: 'rotate(6deg)' }} /></Box>
+          <Typography variant="h6" fontWeight={700} sx={{ letterSpacing: '-0.04em' }}>
             Wisely
           </Typography>
         </Box>
@@ -129,7 +131,7 @@ function Layout({ children }) {
         </Box>
       </Drawer>
 
-      <Box component="main" sx={{ flexGrow: 1, p: 4, bgcolor: 'background.default' }}>
+      <Box component="main" sx={{ flexGrow: 1, p: { xs: 2, sm: 4, md: 5 }, bgcolor: 'background.default', minWidth: 0 }}>
         {children}
       </Box>
     </Box>

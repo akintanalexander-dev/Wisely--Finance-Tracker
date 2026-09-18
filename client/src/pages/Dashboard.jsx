@@ -23,6 +23,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutlined';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import Layout from '../components/Layout';
+import './Dashboard.css';
 
 function Dashboard() {
   const user = JSON.parse(sessionStorage.getItem('user'));
@@ -109,10 +110,10 @@ function Dashboard() {
 
   return (
     <Layout>
-      <Typography variant="overline" color="text.secondary">
+      <Typography variant="overline" className="dashboard-date" color="text.secondary">
         {today}
       </Typography>
-      <Typography variant="h4" fontWeight={700} sx={{ mb: 0.5 }}>
+      <Typography variant="h4" className="dashboard-title" fontWeight={700} sx={{ mb: 0.5 }}>
         Good day, {user?.name?.split(' ')[0]}
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 4 }}>
@@ -121,7 +122,7 @@ function Dashboard() {
 
       <Grid container spacing={3} sx={{ mb: 4 }}>
         <Grid item xs={12} md={6}>
-          <Card
+          <Card className="balance-panel"
             sx={{
               bgcolor: 'primary.main',
               color: 'white',
@@ -204,7 +205,7 @@ function Dashboard() {
         </Grid>
       </Grid>
 
-      <Card sx={{ mb: 4 }}>
+      <Card className="transaction-panel" sx={{ mb: 4 }}>
         <CardContent>
           <Typography variant="subtitle1" fontWeight={600} sx={{ mb: 2 }}>
             Add Transaction
