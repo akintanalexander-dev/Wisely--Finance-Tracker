@@ -49,7 +49,7 @@ function Dashboard() {
 
   const fetchTransactions = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/transactions', {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/transactions`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTransactions(response.data.transactions);
@@ -70,7 +70,7 @@ function Dashboard() {
 
     try {
       await axios.post(
-        'http://localhost:5000/api/transactions',
+        `${import.meta.env.VITE_API_URL}/api/transactions`,
         { type, amount, category, description },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -91,7 +91,7 @@ function Dashboard() {
     if (!confirmed) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/transactions/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/transactions/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchTransactions();

@@ -17,7 +17,7 @@ function Signup() {
     setSubmitting(true);
 
     try {
-      await axios.post('http://localhost:5000/api/auth/signup', {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/signup`, {
         name,
         email,
         password,
@@ -88,7 +88,7 @@ function Signup() {
           </Button>
         </Box>
 
-        <Typography textAlign="center" sx={{ mt: 3 }} variant="body2" color="text.secondary">
+        <Typography align="center" sx={{ mt: 3 }} variant="body2" color="text.secondary">
           Already have an account?{' '}
           <Link to="/login" style={{ color: '#0F4C4C', fontWeight: 600 }}>
             Log In
