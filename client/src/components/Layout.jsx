@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Box,
@@ -15,17 +16,43 @@ import PersonIcon from '@mui/icons-material/PersonOutlined';
 import LogoutIcon from '@mui/icons-material/LogoutOutlined';
 
 const drawerWidth = 240;
+const INACTIVITY_LIMIT = 10 * 60 * 1000; // 10 minutes in milliseconds
 
 function Layout({ children }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(sessionStorage.getItem('user'));
+  const timerRef = useRef(null);
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('user');
     navigate('/login');
   };
+
+  useEffect(() => {
+    const resetTimer = () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => {
+        handleLogout();
+      }, INACTIVITY_LIMIT);
+    };
+
+    const activityEvents = ['mousemove', 'keydown', 'click', 'scroll'];
+
+    activityEvents.forEach((event) => {
+      window.addEventListener(event, resetTimer);
+    });
+
+    resetTimer();
+
+    return () => {
+      activityEvents.forEach((event) => {
+        window.removeEventListener(event, resetTimer);
+      });
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   const navItems = [
     { label: 'Dashboard', icon: <DashboardIcon />, path: '/dashboard' },
